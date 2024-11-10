@@ -1,0 +1,29 @@
+<div class="container">
+    <h1>
+        Summer Villa
+    </h1>
+    <h2>
+        Where Every Stay Feels Like a Getaway
+    </h2>
+    <div class="logo">
+        <img alt="Logo image with a hula girl and the text 'Aloha'" height="200"
+            src="\images\pngwing.com (3).png"
+            width="200" />
+    </div>
+
+    <div>
+        <input class="form-control" placeholder="USERNAME" type="text" [(ngModel)]="username" />
+        <input class="form-control" placeholder="PASSWORD" type="password" [(ngModel)]="password" />
+    </div>
+
+    <div *ngIf="errorMessage" class="error-message">{{ errorMessage }}</div>
+
+    <div>
+        <button [disabled] = "!username || !password"  class="btn-login" type="submit">
+            Login
+        </button>
+    </div>
+
+   
+
+</div>
