@@ -41,6 +41,17 @@ h2 {
     font-size: 18px;
     cursor: pointer;
 }
+.btn-login:disabled {
+    background-color: #ccc;
+    cursor: not-allowed;
+}
 .logo {
     margin-bottom: 30px;
+    background-color: #4B0082;
+    border: none;
+    border-radius: 25px;
+    padding: 10px 27px;
+    color: white;
+    font-size: 18px;
+    cursor: pointer;
 }

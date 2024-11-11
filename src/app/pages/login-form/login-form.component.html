@@ -6,8 +6,7 @@
         Where Every Stay Feels Like a Getaway
     </h2>
     <div class="logo">
-        <img alt="Logo image with a hula girl and the text 'Aloha'" height="200"
-            src="\images\pngwing.com (3).png"
+        <img alt="Logo image with a hula girl and the text 'Aloha'" height="200" src="\images\pngwing.com (3).png"
             width="200" />
     </div>
 
@@ -19,11 +18,11 @@
     <div *ngIf="errorMessage" class="error-message">{{ errorMessage }}</div>
 
     <div>
-        <button [disabled] = "!username || !password"  class="btn-login" type="submit">
+        <button [disabled]="!username || !password" class="btn-login" type="submit" (click)="loginUser()">
             Login
         </button>
     </div>
 
-   
+
 
 </div>
