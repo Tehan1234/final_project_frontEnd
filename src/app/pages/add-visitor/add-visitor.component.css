@@ -36,8 +36,9 @@ h2 {
 }
 
 .form-control {
+    background: transparent;
     border-radius: 30px;
-    border: 1px solid #000;
+    border: 2.3px solid #000;
 }
 
 .btn-register {

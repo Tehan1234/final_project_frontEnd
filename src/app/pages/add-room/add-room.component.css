@@ -8,31 +8,41 @@
     background-repeat: no-repeat;
     overflow: auto; /* Allows scrolling if content overflows */
 }
+
+
 .container {
-    margin-top: 100px;
-    font-family: 'Roboto', sans-serif;
-    color: white;
     text-align: center;
+    padding-top: 60px;
 }
 h1 {
+    color: #8B0000;
+    text-align: center;
     font-family: 'Great Vibes', cursive;
     font-size: 72px;
-    color: #8B0000;
 }
+
 h2 {
+    color: #FFFFFF;
+    text-align: center;
     font-size: 24px;
-    margin-bottom: 50px;
+    margin-bottom: 40px;
+}
+.flower-image {
+    width: 200px;
+    height: auto;
 }
 .form-control {
-    background: rgba(255, 255, 255, 0.8);
-    border: 2px solid #8B0000;
-    border-radius: 25px;
-    padding: 7px 15px;
-    margin-bottom: 20px;
-    margin-left: 26%;
-    width: 45%;
+    background: rgba(131, 114, 114, 0.8);
+    border: 2px solid #4a2c2a;
+    border-radius: 30px;
+    color: #180d0d;
+    margin-top: 4%;
 }
-.btn-login {
+.form-control:focus {
+    box-shadow: none;
+    border-color: #7b2d26;
+}
+.btn-custom {
     background-color: #4B0082;
     border: none;
     border-radius: 25px;
@@ -40,17 +50,9 @@ h2 {
     color: white;
     font-size: 18px;
     cursor: pointer;
+    width: 12%;
+    margin-top: 4%;
 }
-.btn-login:disabled {
-    background-color: #ccc;
-    cursor: not-allowed;
-}
-.logo {
-    margin-bottom: 30px;
-    border: none;
-    border-radius: 25px;
-    padding: 10px 27px;
-    color: white;
-    font-size: 18px;
-    cursor: pointer;
+.btn-custom:hover {
+    background-color: #5a1f1a;
 }

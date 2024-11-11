@@ -5,6 +5,7 @@
         <table>
             <thead>
                 <tr>
+                    <th>Visitor Id</th>
                     <th>Full-Name</th>
                     <th>Gender</th>
                     <th>Phone-Number</th>
@@ -18,23 +19,24 @@
                 </tr>
             </thead>
             <tbody>
-                <tr>
-                    <td>Details 1</td>
-                    <td>Details 2</td>
-                    <td>Details 3</td>
-                    <td>Details 4</td>
-                    <td>Details 5</td>
-                    <td>Details 6</td>
-                    <td>Details 7</td>
-                    <td>Details 8</td>
-                    <td>Details 9</td>
-                    <td>Details 10</td>
+                <tr *ngFor="let visitor of visitorList;">
+                    <td>{{visitor.visitorId}}</td>
+                    <td>{{visitor.fullName}}</td>
+                    <td>{{visitor.gender}}</td>
+                    <td>{{visitor.phoneNumber}}</td>
+                    <td>{{visitor.emailAddress}}</td>
+                    <td>{{visitor.homeAddress}}</td>
+                    <td>{{visitor.nationality}}</td>
+                    <td>{{visitor.idType}}</td>
+                    <td>{{visitor.idNumber}}</td>
+                    <td>{{visitor.numberOfGuests}}</td>
+                    <td>{{visitor.paymentMethod}}</td>
                 </tr>
             </tbody>
         </table>
     </div>
 
     <div class="refresh-button">
-        <button class="btn btn-primary">Refresh</button>
+        <button class="sidebar" routerLink="/searchVisitor">Search Visitor </button>
     </div>
 </div>

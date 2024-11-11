@@ -13,7 +13,7 @@
     margin-top: 100px;
 }
 .title {
-    font-size: 48px;
+    font-size: 50px;
     color: white;
     text-align: center;
     font-family: 'Times New Roman', Times, serif;
@@ -54,4 +54,16 @@ h2 {
     margin-left: 45%;
    
 
+}
+.sidebar {
+    background-color: #7E6191;
+    padding: 16px;
+    border-radius: 15px;
+    margin-bottom: 30px;
+    text-align: center;
+    font-size: 1.2em;
+    color: whitesmoke;
+    margin-top: 50px;
+    width: 30%;
+    margin-left: -10%;
 }
