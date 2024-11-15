@@ -1,0 +1,50 @@
+:host {
+    display: block;
+    width: 100vw; /* Full viewport width */
+    height: 100vh; /* Full viewport height */
+    background-image: url("/images/background.jpg");
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    overflow: auto; 
+}
+.container {
+    max-width: 600px;
+    margin-top: 60px;
+    padding: 20px;
+    border-radius: 10px;
+}
+h1 {
+    font-family: 'Great Vibes', cursive;
+    font-size: 72px;
+    color: #8B0000;
+    text-align: right;
+    margin-top: 20px;
+    margin-right: 20px;
+}
+
+h2 {
+    font-size: 24px;
+    margin-bottom: 50px;
+    text-align: right;
+    margin-top: 20px;
+    margin-right: 20px;
+}
+.form-label {
+    font-size: 18px;
+    font-weight: bold;
+}
+.form-control {
+    border-radius: 20px;
+    border: 2px solid #4A2C2A;
+}
+.btn-custom {
+    background-color: #4A2C2A;
+    color: white;
+    border-radius: 20px;
+    padding: 10px 20px;
+    font-size: 18px;
+}
+.btn-custom:hover {
+    background-color: #6A4A4A;
+}

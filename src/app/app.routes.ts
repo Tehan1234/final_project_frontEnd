@@ -5,6 +5,9 @@ import { AddVisitorComponent } from './pages/add-visitor/add-visitor.component';
 import { VisitorListComponent } from './pages/visitor-list/visitor-list.component';
 import { SearchVisitorComponent } from './pages/search-visitor/search-visitor.component';
 import { AddRoomComponent } from './pages/add-room/add-room.component';
+import { RoomListComponent } from './pages/room-list/room-list.component';
+import { BookingComponent } from './pages/booking/booking.component';
+import { BookingListComponent } from './pages/booking-list/booking-list.component';
 
 
 export const routes: Routes = [
@@ -31,5 +34,17 @@ export const routes: Routes = [
   {
     path: 'addRoom',
     component: AddRoomComponent,
+  },
+  {
+    path: 'roomList',
+    component: RoomListComponent,
+  },
+  {
+    path: 'booking',
+    component: BookingComponent,
+  },
+  {
+    path: 'booking-list',
+    component: BookingListComponent,
   },
 ];

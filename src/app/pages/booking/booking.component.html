@@ -1,0 +1,50 @@
+<div class="container text-center">
+    <h1>New Booking</h1>
+    <h2>Luxury Meets Nature at Summer Villa</h2>
+
+    <!-- Search Visitor Input -->
+    <div class="mb-3 text-start">
+        <label for="searchVisitor" class="form-label">Search Visitor :-</label>
+        <input type="text" class="form-control" id="searchVisitor" placeholder="Enter Visitor Name :-" [(ngModel)]="fullName">
+    </div>
+    <button type="button" class="btn btn-custom mb-3" (click)="searchVisitor()">Search</button>
+
+    <!-- Error Message Display -->
+    <div *ngIf="errorMessage" style="color: red;">
+        {{ errorMessage }}
+    </div>
+
+    <!-- Visitor Details Form (visible if visitor found) -->
+    <div *ngIf="visitor">
+        <div class="mb-3 text-start">
+            <label for="visitorId" class="form-label">Visitor ID</label>
+            <input type="text" class="form-control" id="visitorId" [value]="visitor.visitorId" readonly>
+        </div>
+
+        <!-- <div class="mb-3 text-start">
+            <label for="roomId" class="form-label">Room ID</label>
+            <select class="form-control" id="roomId">
+                <option *ngFor="let rooms of availableRooms" [value]="rooms">{{ rooms.roomId }}</option>
+            </select>
+        </div> -->
+
+        <label for="idType" class="form-label">Room ID</label>
+                <div class="position-relative">
+                    <select class="form-control" id="idType">
+                       <option value="Available Rooms Ids" *ngFor="let rooms of availableRooms" [value]="rooms">{{rooms.roomId}}</option>
+                        
+                    </select>
+                    <i class="bi bi-chevron-down position-absolute" style="right: 10px; top: 50%; transform: translateY(-50%); pointer-events: none;"></i>
+                </div>
+        
+
+        <!-- Check-out Date Selection -->
+        <div class="mb-3 text-start">
+            <label for="checkoutDate" class="form-label">Check-out Date</label>
+            <input type="date" class="form-control" id="checkoutDate">
+        </div>
+
+        <!-- Book Button -->
+        <button type="submit" class="btn btn-custom">BOOK</button>
+    </div>
+</div>
