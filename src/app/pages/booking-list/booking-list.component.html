@@ -1,33 +1,30 @@
 <div class="container">
-    <h1>Visitor List</h1>
+    <h1>Booking List</h1>
     <h2>Escape to Paradise, Stay in Comfort</h2>
     <div class="room-list">
         <table>
             <thead>
                 <tr>
+                    <th>Booking Id</th>
+                    <th>Vistor Id</th>
                     <th>Room Id</th>
-                    <th>Room Type</th>
-                    <th>Bed Type</th>
-                    <th>amentities</th>
-                    <th>Price per Night</th>
-                    <th>avalability</th>
-                    
+                    <th>checkInDate</th>
+                    <th>checkOutDate</th>
                 </tr>
             </thead>
             <tbody>
-                <tr >
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
+                <tr *ngFor="let booking of bookingList;">
+                    <td>{{booking.bookingId}}</td>
+                    <td>{{booking.visitorId}}</td>
+                    <td>{{booking.roomId}}</td>
+                    <td>{{booking.checkInDate}}</td>
+                    <td>{{booking.checkOutDate}}</td>
                 </tr>
             </tbody>
         </table>
     </div>
 
     <div class="refresh-button">
-        <button class="sidebar"> Refresh</button>
+        <button class="sidebar">Refresh</button>
     </div>
 </div>

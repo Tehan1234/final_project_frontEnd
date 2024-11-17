@@ -1,4 +1,5 @@
 import { CommonModule } from '@angular/common';
+import { HttpClient } from '@angular/common/http';
 import { Component } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 
@@ -10,5 +11,20 @@ import { FormsModule } from '@angular/forms';
   styleUrl: './booking-list.component.css'
 })
 export class BookingListComponent {
+
+  public bookingList:any = [];
+
+  constructor(private http : HttpClient){
+    this.loadRoom();
+  }
+
+  loadRoom(){
+    this.http.get("http://localhost:8080/booking/getAll-room").subscribe(data=>{
+      console.log(data);
+      this.bookingList=data;
+    })
+  }
+
+
 
 }

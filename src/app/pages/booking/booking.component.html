@@ -5,7 +5,8 @@
     <!-- Search Visitor Input -->
     <div class="mb-3 text-start">
         <label for="searchVisitor" class="form-label">Search Visitor :-</label>
-        <input type="text" class="form-control" id="searchVisitor" placeholder="Enter Visitor Name :-" [(ngModel)]="fullName">
+        <input type="text" class="form-control" id="searchVisitor" placeholder="Enter Visitor Name :-"
+            [(ngModel)]="fullName" />
     </div>
     <button type="button" class="btn btn-custom mb-3" (click)="searchVisitor()">Search</button>
 
@@ -18,33 +19,36 @@
     <div *ngIf="visitor">
         <div class="mb-3 text-start">
             <label for="visitorId" class="form-label">Visitor ID</label>
-            <input type="text" class="form-control" id="visitorId" [value]="visitor.visitorId" readonly>
+            <input type="text" class="form-control" id="visitorId" [(ngModel)]="booking.visitorId" readonly />
         </div>
 
-        <!-- <div class="mb-3 text-start">
-            <label for="roomId" class="form-label">Room ID</label>
-            <select class="form-control" id="roomId">
-                <option *ngFor="let rooms of availableRooms" [value]="rooms">{{ rooms.roomId }}</option>
+        <label for="roomId" class="form-label">Room ID</label>
+        <div class="position-relative">
+            <select class="form-control" id="roomId" [(ngModel)]="booking.roomId">
+                <option value="" disabled selected>Select Room</option> <!-- Placeholder option -->
+                <option *ngFor="let roomId of availableRoomIds" [value]="roomId">{{ roomId }}</option>
             </select>
-        </div> -->
+            <i class="bi bi-chevron-down position-absolute"
+                style="right: 10px; top: 50%; transform: translateY(-50%); pointer-events: none;"></i>
+        </div>
 
-        <label for="idType" class="form-label">Room ID</label>
-                <div class="position-relative">
-                    <select class="form-control" id="idType">
-                       <option value="Available Rooms Ids" *ngFor="let rooms of availableRooms" [value]="rooms">{{rooms.roomId}}</option>
-                        
-                    </select>
-                    <i class="bi bi-chevron-down position-absolute" style="right: 10px; top: 50%; transform: translateY(-50%); pointer-events: none;"></i>
-                </div>
-        
+        <!-- Check-in Date Selection -->
+        <div class="mb-3 text-start">
+            <label for="checkinDate" class="form-label">Check-in Date</label>
+            <input type="date" class="form-control" id="checkinDate" [(ngModel)]="booking.checkInDate"
+                [min]="minCheckInDate" (change)="validateDates()" />
+            <small *ngIf="checkInError" style="color: red;">{{ checkInError }}</small>
+        </div>
 
         <!-- Check-out Date Selection -->
         <div class="mb-3 text-start">
             <label for="checkoutDate" class="form-label">Check-out Date</label>
-            <input type="date" class="form-control" id="checkoutDate">
+            <input type="date" class="form-control" id="checkoutDate" [(ngModel)]="booking.checkOutDate"
+                [min]="minCheckOutDate" (change)="validateDates()" />
+            <small *ngIf="checkOutError" style="color: red;">{{ checkOutError }}</small>
         </div>
 
         <!-- Book Button -->
-        <button type="submit" class="btn btn-custom">BOOK</button>
+        <button type="button" class="btn btn-custom" (click)="addBooking()">Book</button>
     </div>
 </div>
