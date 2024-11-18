@@ -45,7 +45,7 @@ export class BookingComponent implements OnInit {
     checkOutDate: '',
   };
 
-  constructor(private http: HttpClient) {}
+  constructor(private http: HttpClient) { }
 
   ngOnInit(): void {
     this.loadAvailableRoomIds();
@@ -64,10 +64,12 @@ export class BookingComponent implements OnInit {
     const day = date.getDate().toString().padStart(2, '0');
     return `${year}-${month}-${day}`;
   }
- 
+
   searchVisitor(): void {
     this.http
-      .get<Visitor>(`http://localhost:8080/visitor/searchByName/${this.fullName}`)
+      .get<Visitor>(
+        `http://localhost:8080/visitor/searchByName/${this.fullName}`
+      )
       .subscribe({
         next: (data) => {
           this.visitor = data;
@@ -97,11 +99,15 @@ export class BookingComponent implements OnInit {
 
   addBooking(): void {
     // Validate required fields
-    if (!this.booking.checkInDate || !this.booking.checkOutDate || !this.booking.roomId) {
+    if (
+      !this.booking.checkInDate ||
+      !this.booking.checkOutDate ||
+      !this.booking.roomId
+    ) {
       alert('Please fill in all required fields correctly.');
       return;
     }
-  
+
     // Proceed with the booking process if validation passes
     this.http
       .post('http://localhost:8080/booking/addNewBooking', this.booking)
@@ -124,7 +130,6 @@ export class BookingComponent implements OnInit {
         },
       });
   }
-  
 
   validateDates() {
     this.checkInError = '';
@@ -149,32 +154,4 @@ export class BookingComponent implements OnInit {
       this.booking.checkOutDate = '';
     }
   }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 }

@@ -1,72 +1,60 @@
 <div class="container">
-    <h1>
-        New Room
-    </h1>
-    <h2>
-        Luxury Meets Nature at Summer Villa
-    </h2>
+    <h1>New Room</h1>
+    <h2>Luxury Meets Nature at Summer Villa</h2>
     <img alt="Flower decoration" class="flower-image" height="100" src="\images\pngwing.com (2).png" width="200" />
+  
+    <div class="row mb-3">
+      <div class="col">
+        <div class="position-relative">
+        <select class="form-control" [(ngModel)]="room.typeOfRoom">
+          <option value="">Select Room Type</option>
+          <option value="Standard Room">Standard Room</option>
+          <option value="Family Room">Family Room</option>
+          <option value="Single Room">Single Room</option>
+          <option value="Double Room">Double Room</option>
+          <option value="Honeymoon Suite">Honeymoon Suite</option>
+          <option value="Deluxe Room">Deluxe Room</option>
+        </select>
+        <i class="bi bi-chevron-down position-absolute"
+        style="right: 10px; top: 50%; transform: translateY(-50%); pointer-events: none;"></i>
+        </div>
+      </div>
 
+
+      <div class="col">
+        <div class="position-relative">
+        <select class="form-control" [(ngModel)]="room.bedType">
+          <option value="">Select Bed Type</option>
+          <option value="Single Bed">Single Bed</option>
+          <option value="Twin Beds">Twin Beds</option>
+          <option value="Double Bed">Double Bed</option>
+          <option value="Queen Bed">Queen Bed</option>
+          <option value="King Bed">King Bed</option>
+        </select>
+        <i class="bi bi-chevron-down position-absolute"
+        style="right: 10px; top: 50%; transform: translateY(-50%); pointer-events: none;"></i>
+        </div>
+      </div>
+    </div>
+  
     <div class="row mb-3">
         <div class="col">
-            <div class="position-relative">
-                <select class="form-control">
-                    <input class="form-control" placeholder="Room Type" type="text" />
-                    <option value="standard-room">Standard Room</option>
-                    <option value="Family-room">Family Room</option>
-                    <option value="other">Single Room</option>
-                    <option value="other">Double Room</option>
-                    <option value="other">Honeymoon Suite</option>
-                    <option value="other">Deluxe Room</option>
-                </select>
-                <i class="bi bi-chevron-down position-absolute"
-                    style="right: 10px; top: 50%; transform: translateY(-50%); pointer-events: none;"></i>
-            </div>
+          <textarea
+            class="form-control-1"
+            [(ngModel)]="room.amenities"
+            placeholder="Enter amenities, separated by commas (e.g., WiFi, Pool, Parking)"
+            rows="3"
+          ></textarea>
         </div>
-        <div class="col">
-            <div class="position-relative">
-                <select class="form-control">
-                    <input class="form-control" placeholder="Bed Type" type="text" />
-                    <option value="standard-room">Single Bed</option>
-                    <option value="Family-room">Twin Beds</option>
-                    <option value="other">Double Bed</option>
-                    <option value="other">Queen Bed</option>
-                    <option value="other">King Bed</option>
-                </select>
-                <i class="bi bi-chevron-down position-absolute"
-                    style="right: 10px; top: 50%; transform: translateY(-50%); pointer-events: none;"></i>
-            </div>
-        </div>
-    </div>
-
-
-
-
+      </div>
 
     <div class="row mb-3">
-        <div class="col">
-            <input class="form-control1" placeholder="Amenities" type="text" />
-        </div>
+      <div class="col">
+        <input class="form-control-2" [(ngModel)]="room.pricePerNight" placeholder="Price per Night" type="number" />
+      </div>
     </div>
-    <div class="row mb-3">
-        <div class="col">
-            <input class="form-control1" placeholder="Price per Night" type="text" />
-        </div>
-    </div>
-    <button class="btn btn-custom" type="submit">
-        ADD
+    <button class="btn btn-custom" (click)="addNewRoom()" type="button">
+      Add
     </button>
-
-</div>
-
-
-
-<!-- <div class="position-relative">
-    <select class="form-control" id="gender">
-        <option value="" disabled selected>Select Gender</option>
-        <option value="male">Male</option>
-        <option value="female">Female</option>
-        <option value="other">Other</option>
-    </select>
-    <i class="bi bi-chevron-down position-absolute" style="right: 10px; top: 50%; transform: translateY(-50%); pointer-events: none;"></i>
-</div> -->
+  </div>
+  
