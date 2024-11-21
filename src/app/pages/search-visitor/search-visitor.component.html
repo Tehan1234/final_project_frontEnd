@@ -1,101 +1,77 @@
 <div class="container">
     <div class="header">
-        <h1>
-            Search Visitor
-        </h1>
-        <h2>
-            Where Every Stay Feels Like a Getaway
-        </h2>
+      <h1>Search Visitor</h1>
+      <h2>Where Every Stay Feels Like a Getaway</h2>
     </div>
-
+  
     <div class="form-group">
-        <label for="searchVisitor" class="form-label">Search Visitor :-</label>
-        <input type="text" class="form-control1" id="searchVisitor" placeholder="Enter Visitor Name"
-            [(ngModel)]="fullName">
-        <button class="btn-search" (click)="searchVisitor()">Search</button>
-
-        <div *ngIf="errorMessage" style="color: red;">
-            {{ errorMessage }}
-        </div>
+      <label for="searchVisitor" class="form-label">Search Visitor:</label>
+      <input
+        type="text"
+        class="form-control1"
+        id="searchVisitor"
+        placeholder="Enter Visitor Name"
+        [(ngModel)]="fullName"
+      />
+      <button class="btn-search" (click)="searchVisitor()">Search</button>
     </div>
-
+  
+    <!-- Visitor Details Section -->
     <div *ngIf="visitor">
-
-        <div class="row">
-            <div class="col-md-6 form-group">
-                <label for="idNumber" class="form-label">ID Number</label>
-                <input type="text" class="form-control" id="idNumber" [value]="visitor.visitorId" readonly>
-            </div>
-            <div class="col-md-6 form-group">
-                <label for="address" class="form-label">Address</label>
-                <input type="text" class="form-control" id="address" [value]="visitor.homeAddress" readonly >
-            </div>
+      <div class="row">
+        <div class="col-md-6 form-group">
+          <label for="idNumber" class="form-label">ID Number</label>
+          <input type="text" class="form-control" id="idNumber" [value]="visitor.idNumber" readonly />
         </div>
-
-        <div class="row">
-            <div class="col-md-6 form-group">
-                <label for="phoneNumber" class="form-label">Phone Number</label>
-                <input type="text" class="form-control" id="phoneNumber" [value]="visitor.phoneNumber">
-            </div>
-            <div class="col-md-6 form-group">
-                <label for="nationality" class="form-label">Nationality</label>
-                <input type="text" class="form-control" id="nationality" [value]="visitor.nationality" readonly>
-            </div>
+        <div class="col-md-6 form-group">
+          <label for="address" class="form-label">Address</label>
+          <input type="text" class="form-control" id="address" [value]="visitor.homeAddress" readonly />
         </div>
-
-        <div class="row">
-            <div class="col-md-6 form-group">
-                <label for="numberOfGuests" class="form-label">Number of Guests</label>
-                <input type="text" class="form-control" id="numberOfGuests" [value]="visitor.numberOfGuests">
-            </div>
-
-            <div class="col-md-6 form-group">
-                <label for="gender" class="form-label">Gender</label>
-                <div class="position-relative">
-                    <select class="form-control" id="gender" [value]="visitor.gender" readonly>
-                        <option>Male</option>
-                        <option>Female</option>
-                        <option>Other</option>
-                    </select>
-                    <i class="bi bi-chevron-down position-absolute"
-                        style="right: 10px; top: 50%; transform: translateY(-50%); pointer-events: none;"></i>
-                </div>
-            </div>
+      </div>
+  
+      <div class="row">
+        <div class="col-md-6 form-group">
+          <label for="phoneNumber" class="form-label">Phone Number</label>
+          <input type="text" class="form-control" id="phoneNumber" [value]="visitor.phoneNumber" readonly />
         </div>
-
-
-        <div class="row">
-            <div class="col-md-6 form-group">
-                <label for="idType" class="form-label">ID Type</label>
-                <div class="position-relative">
-                    <select class="form-control" id="idType" [value]="visitor.idType" >
-                        <option>Passport</option>
-                        <option>Driver's License</option>
-                        <option>National ID</option>
-                    </select>
-                    <i class="bi bi-chevron-down position-absolute"
-                        style="right: 10px; top: 50%; transform: translateY(-50%); pointer-events: none;"></i>
-                </div>
-            </div>
-
-            <div class="col-md-6 form-group">
-                <label for="paymentMethod" class="form-label">Payment Method</label>
-                <div class="position-relative">
-                    <select class="form-control" id="paymentMethod" [value]="visitor.paymentMethod" readonly >
-                        <option>Credit Card</option>
-                        <option>Debit Card</option>
-                        <option>Cash</option>
-                    </select>
-                    <i class="bi bi-chevron-down position-absolute"
-                        style="right: 10px; top: 50%; transform: translateY(-50%); pointer-events: none;"></i>
-                </div>
-            </div>
+        <div class="col-md-6 form-group">
+          <label for="nationality" class="form-label">Nationality</label>
+          <input type="text" class="form-control" id="nationality" [value]="visitor.nationality" readonly />
         </div>
-
-        <div class="form-group">
-            <label for="emailAddress" class="form-label">Email Address</label><br>
-            <input type="email" class="form-control2" id="emailAddress" [value]="visitor.emailAddress" readonly>
+      </div>
+  
+      <div class="row">
+        <div class="col-md-6 form-group">
+          <label for="numberOfGuests" class="form-label">Number of Guests</label>
+          <input type="text" class="form-control" id="numberOfGuests" [value]="visitor.numberOfGuests" readonly />
         </div>
+        <div class="col-md-6 form-group">
+          <label for="gender" class="form-label">Gender</label>
+          <input type="text" class="form-control" id="gender" [value]="visitor.gender" readonly />
+        </div>
+      </div>
+  
+      <div class="row">
+        <div class="col-md-6 form-group">
+          <label for="idType" class="form-label">ID Type</label>
+          <input type="text" class="form-control" id="idType" [value]="visitor.idType" readonly />
+        </div>
+        <div class="col-md-6 form-group">
+          <label for="paymentMethod" class="form-label">Payment Method</label>
+          <input type="text" class="form-control" id="paymentMethod" [value]="visitor.paymentMethod" readonly />
+        </div>
+      </div>
+  
+      <div class="form-group">
+        <label for="emailAddress" class="form-label">Email Address</label>
+        <input
+          type="email"
+          class="form-control2"
+          id="emailAddress"
+          [value]="visitor.emailAddress"
+          readonly
+        />
+      </div>
     </div>
-
-</div>
+  </div>
+  

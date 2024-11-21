@@ -1,6 +1,6 @@
-import { NgIf } from '@angular/common';
-import { HttpClient } from '@angular/common/http';
 import { Component } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
+import { NgIf } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 
 interface Visitor {
@@ -17,47 +17,33 @@ interface Visitor {
   paymentMethod: string;
 }
 
-
 @Component({
   selector: 'app-search-visitor',
   standalone: true,
-  imports: [FormsModule,NgIf],
+  imports: [FormsModule, NgIf],
   templateUrl: './search-visitor.component.html',
-  styleUrl: './search-visitor.component.css'
+  styleUrls: ['./search-visitor.component.css'],
 })
 export class SearchVisitorComponent {
-
   fullName: string = '';
-
   visitor: Visitor | null = null;
-  
-  errorMessage: string | null = null;
-
 
   constructor(private http: HttpClient) {}
 
   searchVisitor(): void {
+    if (!this.fullName.trim()) {
+      window.alert('Please enter a visitor name to search.');
+      return;
+    }
+
     this.http.get<Visitor>(`http://localhost:8080/visitor/searchByName/${this.fullName}`).subscribe({
       next: (data) => {
-        this.visitor = data;
-        this.errorMessage = null; // Clear any previous error
+        this.visitor = data; // Populate visitor details
       },
       error: () => {
-        this.errorMessage = 'Visitor not found';
         this.visitor = null; // Clear previous visitor data
-      }
+        window.alert('This visitor is not in our database.'); // Show alert
+      },
     });
   }
-
-  
-
-
-
-
-
-
-
-
-
-
 }
