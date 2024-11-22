@@ -8,12 +8,13 @@ import { AddRoomComponent } from './pages/add-room/add-room.component';
 import { RoomListComponent } from './pages/room-list/room-list.component';
 import { BookingComponent } from './pages/booking/booking.component';
 import { BookingListComponent } from './pages/booking-list/booking-list.component';
+import { OnlineVisitorBookingComponent } from './pages/online-visitor-booking/online-visitor-booking.component';
 
 
 export const routes: Routes = [
   {
     path: '',
-    component: DashBoardComponent,
+    component: LoginFormComponent,
   },
   {
     path: 'dashBoard',
@@ -46,5 +47,9 @@ export const routes: Routes = [
   {
     path: 'booking-list',
     component: BookingListComponent,
+  },
+  {
+    path: 'onlineVisitor-booking',
+    component: OnlineVisitorBookingComponent,
   },
 ];

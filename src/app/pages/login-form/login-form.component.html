@@ -18,7 +18,7 @@
     <div *ngIf="errorMessage" class="error-message">{{ errorMessage }}</div>
 
     <div>
-        <button [disabled]="!username || !password" class="btn-login" type="submit" (click)="loginUser()">
+        <button [disabled]="!username || !password" class="btn-login" type="submit" (click)="login()">
             Login
         </button>
     </div>
